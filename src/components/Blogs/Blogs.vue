@@ -1,9 +1,14 @@
 <template>
   <div class="main">
-    <p class="title-main"><span></span>blog</p>
+    <p class="title-main"><span></span>وبلاگ ها</p>
     <div class="blogs-container">
       <div class="blog" v-for="(blog, index) in blogs" :key="index">
-        <img :src="blog.image" />
+        <img src="@/assets/blog/image1.png" v-if="index == 0" />
+        <img src="@/assets/blog/image2.png" v-else-if="index == 1" />
+        <img src="@/assets/blog/image3.png" v-else-if="index == 2" />
+        <img src="@/assets/blog/image4.png" v-else-if="index == 3"  />
+        <img src="@/assets/blog/image5.png" v-else-if="index == 4" />
+        <img src="@/assets/blog/image6.png" v-else-if="index == 5" />
         <p class="title">{{ blog.title }}</p>
         <p class="text">{{ blog.text }}</p>
         <div>
@@ -24,6 +29,9 @@ import { blogs } from '../../mixins.js'
 .title-main span {
   width: 70px;
 }
+.blogs-container {
+  direction: rtl;
+}
 .blog img {
   width: 100%;
   height: 220px;
@@ -32,18 +40,20 @@ import { blogs } from '../../mixins.js'
 }
 .title {
   margin: 7px 0;
-  font-size: 20px;
+  font-size: 25px;
 }
 .text {
   color: #777;
   margin-bottom: 15px;
+  font-size: 17px;
+  line-height: 30px;
 }
 .blog span {
-  margin-right: 15px;
+  margin-right: 18px;
   font-size: 15px;
 }
 i {
-  margin-right: 9px;
+  margin-left: 6px;
 }
 @media screen and (min-width: 576px) {
   .main {
@@ -51,6 +61,9 @@ i {
   }
 }
 @media screen and (min-width: 768px) {
+  .blogs-container {
+    margin-right: 50px;
+  }
   .main {
     padding: 25px;
   }
@@ -59,16 +72,14 @@ i {
     margin-bottom: 50px;
   }
   .blog {
-    width: 45.5%;
+    width: 45%;
     display: inline-block;
-    margin: 0 14px;
+    margin: 0 13px;
   }
 }
 @media screen and (min-width: 1200px) {
   .blog {
     width: 30.8%;
-    display: inline-block;
-    margin: 0 13px;
   }
 }
 </style>

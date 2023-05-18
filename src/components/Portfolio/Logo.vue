@@ -1,10 +1,7 @@
 <template>
-  <div class="image-container" v-for="(logo, index) in portfolios.logo" :key="index">
-    <img :src="logo" />
-  </div>
+  <div class="image-container"><img src="@/assets/Portfolio/image4.png" /></div>
+  <div class="image-container"><img src="@/assets/404.png" /></div>
 </template>
 
-<script setup>
-import { portfolios } from "../../mixins.js";
-</script>
+<script setup></script>
 <style scoped></style>

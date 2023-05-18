@@ -1,16 +1,13 @@
 <template>
   <div class="main">
     <div class="said-bar">
-      <p class="title-main"><span></span>get in touch</p>
+      <p class="title-main"><span></span>در تماس باشید</p>
       <div>
-        <p class="title">don't be shy !</p>
+        <p class="title">خجالتی نباش!</p>
         <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          corporis molestiae ex illo ullam. Doloribus dolores vitae inventore
-          debitis deleniti iure, alias odio ut ratione laboriosam ipsam
-          asperiores voluptatum perferendis incidunt provident esse maiores
-          animi corporis dolore, quibusdam quaerat eum. Debitis sint quo
-          consequatur amet natus magni aliquam iure corrupti!
+          با خیال راحت با من در تماس باشید. من همیشه آماده بحث در مورد پروژه های
+          جدید، ایده های خلاقانه یا فرصت هایی هستم تا بخشی از چشم اندازهای شما
+          باشم.
         </p>
       </div>
       <div class="contacts-me" v-for="(contact, index) in contactsMe" :key="index">
@@ -22,11 +19,11 @@
       </div>
     </div>
     <form action="#" class="form">
-      <input type="text" class="name" placeholder="Name" />
-      <input type="email" class="email" placeholder="Email" />
-      <input type="text" class="subject" placeholder="Subject" />
-      <input type="text" class="message" placeholder="Message" />
-      <button class="submit">send message</button>
+      <input type="text" class="name" placeholder="نام" />
+      <input type="email" class="email" placeholder="ایمیل" />
+      <input type="text" class="subject" placeholder="موضوع" />
+      <input type="text" class="message" placeholder="پیام" />
+      <button class="submit">ارسال پیام</button>
     </form>
   </div>
 </template>
@@ -36,35 +33,42 @@ import { ref } from 'vue'
 let contactsMe = ref([
   {
     icon: '<i class="fa-solid fa-location-dot"></i>',
-    title: 'address point',
-    text: '123 stree now york cite , unitrd states of america 750065'
+    title: 'نقطه آدرس',
+    text: 'ایران,نیشابور,خیابان نور,پلاک 286'
   },
   {
     icon: '<i class="fa-solid fa-envelope"></i>',
-    title: 'mail me',
-    text: 'steve@gmail.con'
+    title: 'به من ایمیل بزنید',
+    text: 'Email@gmail.con'
   },
   {
     icon: '<i class="fa-solid fa-phone"></i>',
-    title: 'call me',
-    text: '+216 21 45 6555'
+    title: 'با من تماس بگیر',
+    text: '+98 921 481 1234'
   }
-]);
+])
+;('')
 </script>
 
 <style scoped>
+.main {
+  direction: rtl;
+}
+.title-main {
+  text-align: start;
+}
 .title-main span {
-  width: 195px;
+  width: 150px;
 }
 .title-main span::after {
-  right: -2px;
+  left: -2px;
 }
 .title {
-  font-size: 25px;
+  font-size: 27px;
   font-weight: bold;
-  text-transform: uppercase;
 }
 .description {
+  font-size: 18px;
   margin: 20px 0;
   color: #555;
 }
@@ -74,7 +78,7 @@ let contactsMe = ref([
 }
 .contacts-me div span {
   display: block;
-  margin-left: 13px;
+  margin-right: 13px;
 }
 .icon {
   font-size: 27px;
@@ -84,11 +88,11 @@ let contactsMe = ref([
   text-transform: uppercase;
 }
 .text-form {
-  margin-top: 7px;
+  margin-top: 10px;
   color: #555;
 }
 .form input {
-  padding-left: 10px;
+  padding-right: 10px;
   color: rgb(150, 150, 150);
   font-size: 14px;
   width: 98%;
@@ -103,7 +107,7 @@ let contactsMe = ref([
 }
 .submit {
   background-image: linear-gradient(
-    -67deg,
+    -70deg,
     transparent 12%,
     var(--color-tem) 12%,
     var(--color-tem) 88%,
@@ -117,18 +121,7 @@ let contactsMe = ref([
   border-radius: 10px;
   background-color: transparent;
   border: none;
-  position: relative;
-}
-.submit::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 105%;
-  background-color: var(--color-tem);
-  transform: rotate(24deg);
-  right: 3px;
-  border-radius: 10px;
-  top: 0;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .name {
@@ -138,21 +131,20 @@ let contactsMe = ref([
   .email {
     display: inline-block;
     width: 47% !important;
-    margin-left: 2.5% !important;
+    margin-right: 2.5% !important;
   }
 }
 @media screen and (min-width: 1200px) {
   .main {
-    padding: 90px 50px 0 50px;
-    height: 100.8%;
     display: flex;
   }
   .said-bar {
     width: 27%;
     margin-right: 50px;
   }
-  .title-main {
-    text-align: start;
+  .description {
+    margin-left: 50px;
+    line-height: 21px;
   }
   .contacts-me {
     margin: 40px 0;
@@ -161,7 +153,7 @@ let contactsMe = ref([
     font-size: 33px;
   }
   .text-form {
-    font-size: 19px;
+    font-size: 17px;
   }
   .form {
     margin-top: 150px;
@@ -175,10 +167,9 @@ let contactsMe = ref([
   }
   .submit {
     margin: 20px 0;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
-    padding: 12px 40px;
-    cursor: pointer;
+    padding: 15px 43px;
   }
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div class="main">
-    <p class="title-main"><span></span>portfolio</p>
+    <p class="title-main"><span></span>نمومه کار ها</p>
     <div class="container-portfolio">
       <nav>
-        <router-link to="/portfolio/all">all</router-link>
-        <router-link to="/portfolio/logo">logo</router-link>
-        <router-link to="/portfolio/video">video</router-link>
-        <router-link to="/portfolio/graphicDesign">graphic design</router-link>
+        <router-link to="/portfolio/all">همه</router-link>
+        <router-link to="/portfolio/logo">لوگو</router-link>
+        <router-link to="/portfolio/video">ویدئو</router-link>
+        <router-link to="/portfolio/graphicDesign">طراحی گرافیک</router-link>
       </nav>
       <div class="ShowPortfolio">
         <router-view></router-view>
@@ -50,7 +50,7 @@
   width: 150px;
 }
 .title-main span::after {
-  right: -3px;
+  left: -3px;
 }
 nav {
   display: none;
@@ -62,7 +62,7 @@ nav a {
   margin-right: 50px;
   color: white;
   text-decoration: none;
-  font-size: 23px;
+  font-size: 25px;
   padding-bottom: 7px;
 }
 nav a.router-link-exact-active {

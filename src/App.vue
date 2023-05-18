@@ -1,25 +1,10 @@
 <template>
   <nav>
-    <div>
-      <router-link @click="check($event)" to="/"><i class="fa-solid fa-house"></i></router-link>
-      <span class="text-menu" v-if="show == '/'">Home</span>
-    </div>
-    <div>
-      <router-link @click="check($event)" to="/about"><i class="fa-solid fa-user"></i></router-link>
-      <span class="text-menu" v-if="show == '/about'">About</span>
-    </div>
-    <div>
-      <router-link @click="check($event)" to="/portfolio/all"><i class="fa-sharp fa-solid fa-briefcase"></i></router-link>
-      <span class="text-menu" v-if="show == '/portfolio/all'">Portfolio</span>
-    </div>
-    <div>
-      <router-link @click="check($event)" to="/blogs"><i class="fa-brands fa-blogger-b"></i></router-link>
-      <span class="text-menu" v-if="show == '/blogs'">blog</span>
-    </div>
-    <div>
-      <router-link @click="check($event)" to="/contact"><i class="fa-solid fa-phone"></i></router-link>
-      <span class="text-menu" v-if="show == '/contact'">contact</span>
-    </div>
+    <div class="menu-btn"><router-link @click="check($event)" to="/"><i class="fa-solid fa-house"></i><span class="menu-text">صحفه اصلی</span></router-link></div>
+    <div class="menu-btn"><router-link @click="check($event)" to="/about"><i class="fa-solid fa-user"></i><span class="menu-text">درباره من</span></router-link></div>
+    <div class="menu-btn"><router-link @click="check($event)" to="/portfolio/all"><i class="fa-sharp fa-solid fa-briefcase"></i><span class="menu-text">نمونه کارها</span></router-link></div>
+    <div class="menu-btn"><router-link @click="check($event)" to="/blogs"><i class="fa-brands fa-blogger-b"></i><span class="menu-text">وبلاگ</span></router-link></div>
+    <div class="menu-btn"><router-link @click="check($event)" to="/contact"><i class="fa-solid fa-phone"></i><span class="menu-text">تماس با ما</span></router-link></div>
   </nav>
   <router-view />
 </template>
@@ -38,9 +23,9 @@ function check (event) {
 </script>
 <style>
 /* // ! CSS all */
-@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://v1.fontapi.ir/css/Samim');
 *:not(i) {
-  font-family: 'Cabin', sans-serif !important;
+  font-family: Samim, sans-serif;
   --color-tem: v-bind(getColorTem);
   margin: 0;
   padding: 0;
@@ -57,6 +42,7 @@ body {
   text-transform: capitalize;
 }
 .title-main {
+  direction: rtl;
   text-transform: uppercase;
   color: var(--color-tem);
   font-size: 27px;
@@ -83,7 +69,7 @@ body {
   content: '';
   position: absolute;
   bottom: 0;
-  right: -10px;
+  left: -8px;
   width: 12px;
   height: 100%;
   background-color: var(--color-tem);
@@ -99,6 +85,12 @@ body {
 <style scoped>
 .text-menu {
   display: block;
+}
+.menu-btn {
+  position: relative;
+}
+.menu-text {
+  display: none;
 }
 nav {
   position: fixed;
@@ -150,9 +142,22 @@ nav a.router-link-exact-active::after {
   background-color: var(--color-tem);
   top: 62px;
 }
+nav a.router-link-exact-active span {
+  color: var(--color-tem);
+    top: 155px;
+}
 @media screen and (min-width: 768px) {
   .text-menu {
     display: none;
+  }
+  .menu-text {
+    display: block;
+    width: 100px;
+    left: -25px;
+    position: absolute;
+    top: 145px;
+    font-size: 15px;
+    color: #fff;
   }
   nav {
     right: 0;
@@ -163,7 +168,7 @@ nav a.router-link-exact-active::after {
     justify-content: start;
   }
   nav div {
-    margin-top: 30px;
+    margin-top: 40px;
   }
   nav div a {
     font-size: 25px;

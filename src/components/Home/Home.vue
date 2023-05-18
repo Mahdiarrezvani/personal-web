@@ -13,18 +13,22 @@
       <img src="" alt="" class="image-mobile" />
       <!--  -->
       <div class="container-texts">
-        <p class="full-name color-text"><span class="border"></span>i'm mahdiar rezvani</p>
-        <p class="job">web developer</p>
+        <p class="full-name color-text">
+          <span class="border"></span>من مهدیار رضوانی هستم
+        </p>
+        <p class="job">برنامه نویس وب</p>
         <p class="description">
-          Hi! My name is <span class="color-text">Mahdiar Rezvani</span>. I am
-          Developer, and I'm very passionate and dedicated to my work. With 18
-          years experience as a professional Web Developer, i have acquired
-          skils and knowledge necessary to make your project a success.
+          سلام! من <span class="color-text">مهدیار رضوانی</span> هستم. من یک
+          توسعه دهنده وب هستم و بسیار مشتاق و متعهد به کارم هستم. با 20 سال
+          تجربه به عنوان یک توسعه دهنده وب حرفه ای، مهارت ها و دانش لازم برای
+          موفقیت پروژه شما را به دست آورده ام.
         </p>
         <div class="container-download">
-          <button class="download">Download CV</button>
+          <button class="download">دانلود رزومه</button>
         </div>
-        <p class="work-with-me">Are you interested working with me? <a href="#">Let's started now</a>
+        <p class="work-with-me">
+          آیا شما علاقه من به همکاری با من هستید؟
+          <a href="#">بیایید اکنون شروع کنیم</a>
         </p>
       </div>
     </div>
@@ -58,16 +62,18 @@ import Shair from './Shair&Tem.vue'
 .container-texts {
   text-align: center;
   margin: 0 35px;
+  line-height: 30px;
 }
 .full-name {
   font-size: 25px;
   position: relative;
   text-transform: uppercase;
   font-weight: bold;
+  padding-bottom: 10px;
 }
 .border {
   position: absolute;
-  width: 280px;
+  width: 220px;
   height: 6px;
   bottom: -10px;
   background-image: linear-gradient(
@@ -84,9 +90,9 @@ import Shair from './Shair&Tem.vue'
   position: absolute;
   width: 11px;
   height: 100%;
-  right: -5px;
+  left: -5px;
   background-image: linear-gradient(
-    -35deg,
+    -40deg,
     transparent 35%,
     var(--color-tem) 35%,
     var(--color-tem) 65%,
@@ -100,7 +106,7 @@ import Shair from './Shair&Tem.vue'
   font-size: 22px;
 }
 .description {
-  font-size: 18px;
+  font-size: 20px;
   color: #888;
 }
 .download {
@@ -113,7 +119,7 @@ import Shair from './Shair&Tem.vue'
     transparent 100%
   );
   margin: 40px 0 60px;
-  font-size: 17px;
+  font-size: 19px;
   padding: 15px 60px;
   background-color: transparent;
   border: none;
@@ -121,7 +127,7 @@ import Shair from './Shair&Tem.vue'
   cursor: pointer;
 }
 .work-with-me {
-  font-size: 17px;
+  font-size: 20px;
 }
 .work-with-me a {
   font-size: 18px;
@@ -131,15 +137,12 @@ import Shair from './Shair&Tem.vue'
   text-decoration: none;
   color: var(--color-tem);
 }
-@media screen and (max-width: 360px) {
+@media screen and (min-width: 360px) {
   .container-texts {
     margin: 0;
   }
-  .border {
-    width: 260px;
-  }
   .description {
-    font-size: 15px;
+    font-size: 17px;
     margin: 0 30px;
   }
 }
@@ -186,6 +189,7 @@ import Shair from './Shair&Tem.vue'
     opacity: 0.4;
   }
   .right {
+    direction: rtl;
     width: 56%;
     display: block;
   }
@@ -194,13 +198,17 @@ import Shair from './Shair&Tem.vue'
   }
   .container-texts {
     margin: 80px 370px 0 0;
+    width: 450px;
     text-align: start;
   }
   .full-name {
-    font-size: 30px;
+    font-size: 37px;
+  }
+  .border {
+    width: 280px;
   }
   .job {
-    font-size: 26px;
+    font-size: 30px;
   }
   .download {
     padding: 13px 50px;
@@ -210,7 +218,6 @@ import Shair from './Shair&Tem.vue'
     bottom: 180px;
   }
   .work-with-me a {
-    font-size: 17px;
     display: inline-block;
   }
 }

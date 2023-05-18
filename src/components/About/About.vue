@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="about-container">
-      <p class="title-main"><span></span>about</p>
+      <p class="title-main"><span></span>درباره من</p>
       <div class="container-info">
         <p class="information" v-for="(info, index) in informationes" :key="index">
           <span v-html="info.icon" class="icon"></span>
@@ -17,18 +17,18 @@
         </div>
       </div>
     </div>
-    <div class="title">my skills</div>
+    <div class="title"><span>مهارت های من</span></div>
     <p class="border"></p>
     <div class="skills-container">
       <div class="skill" v-for="(skill, index) in skills" :key="index">
         <label>{{ skill.label }}</label>
         <div>
-          <span class="show-percentage"><span :style="`transform: translate(-${skill.range}%)`"></span></span>
+          <span class="show-percentage"><span :style="`transform: translate(${skill.range}%)`"></span></span>
           <span class="percentage">{{ skill.percentage }}%</span>
         </div>
       </div>
     </div>
-    <div class="title">experince & education</div>
+    <div class="title"><span>تجربه و آموزش</span></div>
     <p class="border"></p>
     <div class="educations-contaiiner">
       <div class="education" v-for="(education, index) in educations" :key="index">
@@ -48,68 +48,68 @@
 import { ref } from 'vue'
 let informationes = ref([
   {
-    label: 'birthday',
+    label: 'تاریخ تولد',
     icon: `<i class="icon fa-sharp fa-solid fa-gift"></i>`,
-    info: '00 , 00 , 0000'
+    info: '1383.12.26'
   },
   {
-    label: 'age',
+    label: 'سن',
     icon: `<i class="icon fa-sharp fa-solid fa-calendar"></i>`,
-    info: '20'
+    info: '18'
   },
   {
-    label: 'location',
+    label: 'آدرس',
     icon: '<i class="icon fa-solid fa-location-dot"></i>',
-    info: '44 place, pisno,USA'
+    info: 'ایران,نیشابور,شهرک بهداری'
   },
   {
-    label: 'interests',
+    label: 'سرگرمی',
     icon: `<i class="icon fa-sharp fa-solid fa-gamepad"></i>`,
-    info: 'playstation, reading'
+    info: 'پلی استیشن , مطالعه'
   },
   {
-    label: 'study',
+    label: 'دانشگاه',
     icon: `<i class="icon fa-sharp fa-solid fa-book"></i>`,
-    info: 'univercity of chicago'
+    info: 'دانشکده فنی مشهد'
   },
   {
-    label: 'degree',
+    label: 'سطح',
     icon: `<i class="icon fa-sharp fa-solid fa-graduation-cap"></i>`,
-    info: 'master'
+    info: 'استاد'
   },
   {
-    label: 'mail',
+    label: 'ایمیل',
     icon: '<i class="icon fa-solid fa-at"></i>',
-    info: 'example@gmail.com'
+    info: 'mahdiarrezvani59@gmail.com'
   },
   {
-    label: 'phone',
+    label: 'شماره موبایل',
     icon: '<i class="icon fa-solid fa-phone"></i>',
-    info: '+77 022 177 05 05'
+    info: '+98 921 481 1234'
   }
-]);
+])
 let thingsIDid = ref([
   {
     icon: '<i class="fa-solid fa-heart"></i>',
     number: '555',
-    text: 'happy clients'
+    text: 'مشتریان خوشحال'
   },
   {
     icon: '<i class="fa-solid fa-chart-column"></i>',
     number: '222',
-    text: 'projects finished'
+    text: 'پروژه های تموم شده'
   },
   {
     icon: '<i class="fa-solid fa-arrow-down"></i>',
     number: '444',
-    text: 'fils downlaoded'
+    text: 'فایل های دانلود شده'
   },
   {
     icon: '<i class="fa-solid fa-code"></i>',
-    number: '777',
-    text: 'lines of code'
+    number: '+99999',
+    text: 'خطوط کد'
   }
-]);
+])
 let skills = ref([
   { label: 'javascript', percentage: 80, range: '' },
   { label: 'html', percentage: 90, range: '' },
@@ -117,51 +117,54 @@ let skills = ref([
   { label: 'php', percentage: 65, range: '' },
   { label: 'wordpress', percentage: 50, range: '' },
   { label: 'reacct', percentage: 25, range: '' }
-]);
+])
 let educations = ref([
   {
-    title: 'WEB DEVELOPER',
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea numquam nostrumquaerat in rerum ullam earum dolore, enim quod reprehenderit eligendimolestiae sit quasi architecto quis aperiam dolor iure illum.',
+    title: 'توسعه وب',
+    text: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون است.',
     icon: '<i class="fa-solid fa-code"></i>',
-    btn: '2018-present'
+    btn: '2018-الان'
   },
   {
-    title: 'ENGINEERING DEGREE',
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea numquam nostrumquaerat in rerum ullam earum dolore, enim quod reprehenderit eligendimolestiae sit quasi architecto quis aperiam dolor iure illum.',
+    title: 'مدرک مهندسی',
+    text: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون است.',
     icon: '<span class="iconify" data-icon="material-symbols:engineering"></span>',
-    btn: '2018-present'
+    btn: '2018-الان'
   },
   {
-    title: 'JS DEVELOPER',
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea numquam nostrumquaerat in rerum ullam earum dolore, enim quod reprehenderit eligendimolestiae sit quasi architecto quis aperiam dolor iure illum.',
+    title: 'کارشناس ارشد',
+    text: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون است.',
     icon: 'JS',
-    btn: '2018-present'
+    btn: '2018-الان'
   },
   {
-    title: 'MASTER DEGREE',
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea numquam nostrumquaerat in rerum ullam earum dolore, enim quod reprehenderit eligendimolestiae sit quasi architecto quis aperiam dolor iure illum.',
+    title: 'توسعه دهنده js',
+    text: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون است.',
     icon: '<span class="iconify" data-icon="eos-icons:master"></span>',
-    btn: '2018-present'
+    btn: '2018-الان'
   },
   {
-    title: 'CONSULTANT',
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea numquam nostrumquaerat in rerum ullam earum dolore, enim quod reprehenderit eligendimolestiae sit quasi architecto quis aperiam dolor iure illum.',
+    title: 'مدرک لیسانس',
+    text: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون است.',
     icon: '<i class="fa-solid fa-code"></i>',
-    btn: '2018-present'
+    btn: '2018-الان'
   },
   {
-    title: 'BACHELOR DEGREE',
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea numquam nostrumquaerat in rerum ullam earum dolore, enim quod reprehenderit eligendimolestiae sit quasi architecto quis aperiam dolor iure illum.',
+    title: 'مشاور',
+    text: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون است.',
     icon: '<span class="iconify" data-icon="icon-park-solid:bachelor-cap-one"></span>',
-    btn: '2018-present'
+    btn: '2018-الان'
   }
-]);
+])
 skills.value.forEach(function (skill) {
   skill.range = 100 - skill.percentage
 })
 </script>
 
 <style scoped>
+.main {
+  margin: 0 10px;
+}
 .specifiation {
   margin: 0 10px 0 7px;
 }
@@ -171,6 +174,9 @@ skills.value.forEach(function (skill) {
 .information {
   font-size: 17px;
   margin-top: 30px;
+}
+.container-info {
+  direction: rtl;
 }
 .info {
   color: #777;
@@ -199,13 +205,18 @@ skills.value.forEach(function (skill) {
   font-size: 22px;
 }
 .title {
-  background-color: #040404;
-  display: inline-block;
-  font-size: 25px;
-  margin-left: 25px;
-  z-index: 1;
+  position: relative;
+  width: 100%;
   transform: translateY(14px);
-  padding: 0 15px;
+  height: 30px;
+}
+.title span {
+  right: 0;
+  position: absolute;
+  font-size: 27px;
+  background-color: #040404;
+  padding-left: 16px;
+  height: 100%;
 }
 .border {
   margin-bottom: 40px;
@@ -214,16 +225,17 @@ skills.value.forEach(function (skill) {
   background-color: #333;
 }
 .skill {
-  margin: 30px 0;
   text-transform: uppercase;
+  margin: 30px 0;
+  direction: rtl;
 }
 .skill div {
   display: flex;
-  margin: 15px 30px 0 0;
+  margin: 15px 0 0;
 }
 .show-percentage {
   display: flex;
-  margin-right: 12px;
+  margin-left: 12px;
   width: 100%;
   height: 13px;
   border-radius: 5px;
@@ -236,6 +248,9 @@ skills.value.forEach(function (skill) {
   width: 100%;
   height: 100%;
   background-color: var(--color-tem);
+}
+.educations-contaiiner {
+  direction: rtl;
 }
 .education {
   position: relative;
@@ -253,50 +268,57 @@ skills.value.forEach(function (skill) {
   font-size: 23px;
   color: black;
   font-weight: bold;
-  left: -11px;
+  right: 13px;
   z-index: 1;
 }
 .border-column {
-  width: 2px;
+  width: 5px;
   height: 130px;
-  transform: translate(-24px, 47px);
+  transform: translate(40px, 47px);
   background-color: #333;
-  margin-left: 40px;
+  margin-right: 80px;
 }
 .container-texts {
   margin: 10px 0 0 12px;
 }
 .title-education {
-  font-size: 23px;
+  font-size: 25px;
   font-weight: bold;
 }
 .text-education {
   margin: 15px 0 27px;
   color: #777;
+  line-height: 30px;
+  font-size: 18px;
 }
 .container-texts span {
   background-color: #222;
   padding: 10px 20px;
   text-transform: uppercase;
   color: #888;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 7px;
 }
-@media screen and (max-width: 360px) {
+@media screen and (min-width: 360px) {
   .title {
     font-size: 23px;
     padding: 0;
   }
 }
-/* @media screen and (min-width: 576px) {} */
 @media screen and (min-width: 768px) {
+  .main {
+    margin: 0 25px;
+  }
+  .border-column {
+    width: 2px;
+  }
   .title-main {
     text-align: start;
     margin-bottom: 50px;
   }
   .container-info {
     display: grid;
-    grid-template-columns: repeat(1fr, 3);
+    grid-template-columns: repeat(2, 1fr);
   }
   .information {
     font-size: 18px;
@@ -307,46 +329,34 @@ skills.value.forEach(function (skill) {
   }
   .things-i-did-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .things-i-did-icon {
     font-size: 37px;
   }
   .skills-container {
     display: grid;
-    grid-template-columns: repeat(1fr, 3);
   }
   .skill:nth-child(even) {
     grid-column: 2/3;
-    margin-right: 0;
-  }
-  .skill {
-    margin-right: 70px;
+    margin-left: 60px;
   }
 }
 @media screen and (min-width: 992px) {
   .educations-contaiiner {
     display: grid;
-    grid-template-columns: repeat(1fr, 3);
+  }
+  .text-education {
+    width: 80%;
   }
   .education:nth-child(even) {
     grid-column: 2/3;
     margin-left: 50px;
   }
-  .education {
-    margin: 50px 0;
-  }
-  .container-info {
-    width: 70%;
-  }
 }
 @media screen and (min-width: 1200px) {
-  .main {
-    padding-right: 13%;
-    padding: 70px 13% 0 30px;
-  }
-  .container-info {
-    width: 60%;
+  .skill:nth-child(even) {
+    margin-left: 120px;
   }
 }
 </style>
